@@ -1,0 +1,4 @@
+com/example/demo/DemoApplication.class
+com/example/demo/controller/HelloController.class
+com/example/demo/entity/ItemEntity.class
+com/example/demo/repository/ItemRepository.class

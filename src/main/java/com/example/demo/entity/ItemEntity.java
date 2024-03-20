@@ -1,12 +1,12 @@
 package com.example.demo.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="Item")
 public class ItemEntity {
     @Id
-    @GeneratedValue(strategiy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 
     @Column(name="ITEM_NAME", length=50, nullable=false, unique=false)
