@@ -11,7 +11,12 @@ class HelloControllerTest {
 	private HelloController helloController;
 
 	@Test
-	void displayText() {
+	void contextLoads() throws Exception {
+		assertThat(helloController).isNotNull();
+	}
+
+	@Test
+	void displayText() throws Exception {
 		assertThat(helloController.my_text.equals("Greetings from Spring Boot!"));
 	}
 
