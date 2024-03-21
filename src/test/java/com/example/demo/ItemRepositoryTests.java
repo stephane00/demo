@@ -9,22 +9,20 @@ import com.example.demo.repository.ItemRepository;
 import com.example.demo.entity.ItemEntity;
 
 @SpringBootTest
-class ItemEntityTest {
+public class ItemRepositoryTests {
     @Autowired
     private ItemRepository itemRepository;
 
-    private ItemEntity item;
-
-    item = new ItemEntity();
-    item.setName("Test");
-    item.setWeight(1.0);
-    item.setPrice(10.0);
-
     @Test
-    void saveItemTest() throws Exception {
-        itemRepository response = itemRepository.save(item);
+    public void testSave() {
+        ItemEntity item = new ItemEntity();
+        item.setName("Test");
+        item.setWeight(1.0);
+        item.setPrice(10.0);
 
-        assertThat(response).isNotNull();
-        assertThat(response.name.equals("Test"));
+        ItemEntity savedItem = itemRepository.save(item);
+
+        assertThat(savedItem).isNotNull();
+        assertThat(savedItem.getName().equals("Test"));
     }
 }
